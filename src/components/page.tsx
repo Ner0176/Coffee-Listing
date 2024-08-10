@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import bgImage from "../assets/bg-cafe.jpg";
 import {
+  ContentBody,
   ContentContainer,
   ContentHeader,
   ContentInfo,
@@ -37,7 +38,7 @@ export const CoffePage = () => {
       </ImageContainer>
       <ContentContainer>
         <ContentWrapper>
-          <div className="flex flex-col gap-4 px-12 py-10">
+          <div className="flex flex-col gap-4 px-12 py-10 h-full">
             <ContentHeader>
               <ContentTitle>Our Collection</ContentTitle>
               <ContentInfo>
@@ -54,11 +55,11 @@ export const CoffePage = () => {
                 </SwitchButton>
               </div>
             </ContentHeader>
-            <div className="grid grid-cols-3 gap-6 overflow-y-auto">
+            <ContentBody>
               {filteredData.map((item, idx) => (
                 <CoffeeCard key={idx} data={item as ICoffee} />
               ))}
-            </div>
+            </ContentBody>
           </div>
         </ContentWrapper>
       </ContentContainer>
